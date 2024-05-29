@@ -133,17 +133,9 @@ BOOL CKWBaseFormDlg::OnInitDialog()
 	InitButtonImg.Load(_T(".\\Resource\\InitButtonImage.bmp"));
 
 	CRect buttonRect;
-	
-
-
-	//
-	//m_Bitmap.LoadBitmap(IDB_BACKGROUND);
-
 	CRect rect;
 	
 	GetWindowRect(&rect);
-
-
 
 	int width = 1920;  // 새로운 너비
 	int height = 1080; // 새로운 높이
@@ -169,19 +161,11 @@ BOOL CKWBaseFormDlg::OnInitDialog()
 	EvenDL_Count.SetWindowPos(NULL, 1704, 650, 183, 43, SWP_NOSENDCHANGING);;
 	EvenDL_Time.SetWindowPos(NULL, 1704, 735, 183, 43, SWP_NOSENDCHANGING);;
 
-	//model load init
-	even_detection.model_init("./det_0528_1132_best.saigedet");
-	odd_detection.model_init("./det_0528_1555_odd_best.saigedet");
-
-
 	//MIL 관련 초기화 
 	//MIL로 띄울 이미지 odd, even buf할당
-	
 	// 최종 결과물을 가질 MIL_ID Rule 2개 AI 2개
 	// 토탈 MIL_ID 이미지 버퍼 6개 할당
 
-	
-	//motor init
 	motor.init();
 	return TRUE;  // 포커스를 컨트롤에 설정하지 않으면 TRUE를 반환합니다.
 }
@@ -222,8 +206,6 @@ void CKWBaseFormDlg::OnPaint()
 		// 아이콘을 그립니다.
 		dc.DrawIcon(x, y, m_hIcon);
 
-		
-
 	}
 	else
 	{
@@ -238,9 +220,6 @@ void CKWBaseFormDlg::OnPaint()
 		MemDC.SelectObject(&bmp);
 
 		dc.BitBlt(0, 0, rct.Width(), rct.Height(), &MemDC, 0, 0, SRCCOPY);
-
-
-		//CDialogEx::OnPaint();
 	}
 }
 
@@ -253,8 +232,15 @@ HCURSOR CKWBaseFormDlg::OnQueryDragIcon()
 
 void CKWBaseFormDlg::OnBnClickedBtnInit()
 {
+	//model load init
+	even_detection.model_init("./det_0528_1132_best.saigedet");
+	odd_detection.model_init("./det_0528_1555_odd_best.saigedet");
+
+
+	//MIL Allocation & Display Connect
 	m_classMil.Allocation(0);
 	m_classMil.Alloc_MIL_ImageBuffer();
+
 	MdispSelectWindow(m_classMil.OddImageDisplay, m_classMil.OddImage, m_CtrlDisp0.GetSafeHwnd());
 	MdispSelectWindow(m_classMil.EvenImageDisplay, m_classMil.EvenImage, m_CtrlDisp1.GetSafeHwnd());
 	MdispSelectWindow(m_classMil.OddDisplayAI, m_classMil.OddImageAI, m_CtrlDisp2.GetSafeHwnd());
@@ -262,70 +248,10 @@ void CKWBaseFormDlg::OnBnClickedBtnInit()
 	MdispSelectWindow(m_classMil.OddDisplayRule, m_classMil.OddImageRule, m_CtrlDisp4.GetSafeHwnd());
 	MdispSelectWindow(m_classMil.EvenDisplayRule, m_classMil.EvenImageRule, m_CtrlDisp5.GetSafeHwnd());
 
-
-
-
-
-
-	//MbufPut2d(UserHookDataPtr->MilDispImage1, 0, 0, BufX, BufY, (void*)Temp.data);
-
-	//const int rows = 10;
-	//const int cols = 10;
-
-	//// 10x10 배열 생성 및 초기화
-	//vector<vector<int>> originalArray(rows, vector<int>(cols));
-	//for (int i = 0; i < rows; ++i) {
-	//	for (int j = 0; j < cols; ++j) {
-	//		originalArray[i][j] = i * cols + j; // 임의의 값으로 초기화
-	//	}
-	//}
-
-	//// 결과를 저장할 두 개의 10x5 배열 생성
-	//vector<vector<int>> evenArray(rows / 2, vector<int>(cols));
-	//vector<vector<int>> oddArray(rows / 2, vector<int>(cols));
-
-	//int even_y = 0, odd_y = 0;
-	//// 이미지의 모든 픽셀에 대해 반복
-	//for (int y = 0; y < rows; ++y) {
-	//	for (int x = 0; x < cols; ++x) {
-	//		// 홀수 픽셀과 짝수 픽셀로 나누기
-	//		if (y % 2 == 0) {
-	//			evenArray[even_y][x] = originalArray[y][x];
-	//		}
-	//		else {
-	//			oddArray[odd_y][x] = originalArray[y][x];
-	//		}
-	//	}
-	//	if (y % 2 == 0) {
-	//		even_y++;
-	//	}
-	//	else {
-	//		odd_y++;
-	//	}
-	//}
-
-	//// 결과 출력
-	//cout << "Even Array:" << endl;
-	//for (int i = 0; i < rows / 2; ++i) {
-	//	for (int j = 0; j < cols; ++j) {
-	//		cout << evenArray[i][j] << " ";
-	//	}
-	//	cout << endl;
-	//}
-
-	//cout << "\nOdd Array:" << endl;
-	//for (int i = 0; i < rows / 2; ++i) {
-	//	for (int j = 0; j < cols; ++j) {
-	//		cout << oddArray[i][j] << " ";
-	//	}
-	//	cout << endl;
-	//}
-
 }
 
-void CKWBaseFormDlg::OnBnClickedBtnSave()
+void CKWBaseFormDlg::OnBnClickedBtnSave() // Inpsection Start
 {
-
 	motor.move_once(90, 350, 208, 900);
 	m_classMil.CAM1.imgSaved = false;
 	m_classMil.GrabProcess_Line2();
