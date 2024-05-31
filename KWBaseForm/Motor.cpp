@@ -30,8 +30,12 @@ void Motor::init()
 	if (dwRetCode == ENABLE) {
 		cout << "servo on success" << endl;
 	}
+	Sleep(50);
 
 	dwRetCode = AxmHomeSetStart(m_lAxisNo);
+
+	Sleep(50);
+
 	if (dwRetCode != AXT_RT_SUCCESS) {
 		cout << "SetStart Fail" << endl;
 	}
@@ -43,6 +47,7 @@ void Motor::move_position(int pos, int vel, int accel)
 	DWORD dwRetCode;
 
 	dwRetCode = AxmMoveStartPos(m_lAxisNo, pos, vel, accel, accel);
+
 	if (dwRetCode != AXT_RT_SUCCESS) {
 		printf("AxmMoveStartPos return error[Code:%04d]\n", dwRetCode);
 	}

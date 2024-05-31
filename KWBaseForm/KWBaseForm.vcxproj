@@ -36,7 +36,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
     <UseOfMfc>Static</UseOfMfc>
@@ -51,7 +51,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
     <UseOfMfc>Static</UseOfMfc>
@@ -94,7 +94,7 @@
       <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <AdditionalIncludeDirectories>C:\opencv_470\build\include;C:\Program Files\Matrox Imaging\MIL\Include;C:\Program Files (x86)\EzSoftware UC\AXL(Library)\C, C++;D:\Saige\SaigeVision\engine\include</AdditionalIncludeDirectories>
-      <LanguageStandard>Default</LanguageStandard>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -120,7 +120,7 @@
       <PreprocessorDefinitions>_WINDOWS;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <AdditionalIncludeDirectories>C:\opencv_470\build\include;C:\Program Files\Matrox Imaging\MIL\Include;C:\Program Files (x86)\EzSoftware UC\AXL(Library)\C, C++;D:\Saige\SaigeVision\engine\include</AdditionalIncludeDirectories>
-      <LanguageStandard>Default</LanguageStandard>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -147,14 +147,14 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>C:\opencv_480\sources\include\opencv2</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\opencv_470\build\include;C:\Program Files\Matrox Imaging\MIL\Include;C:\Program Files (x86)\EzSoftware UC\AXL(Library)\C, C++;D:\Saige\SaigeVision\engine\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalLibraryDirectories>C:\opencv_480\build\x64\vc16\lib</AdditionalLibraryDirectories>
-      <AdditionalDependencies>opencv_world480.lib;opencv_world480d.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\opencv_470\build\x64\vc16\lib;C:\Program Files\Matrox Imaging\MIL\LIB;C:\Program Files (x86)\EzSoftware UC\AXL(Library)\Library\64Bit;D:\Saige\SaigeVision\engine\lib</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opencv_world470.lib;opencv_world470d.lib;mil.lib;AXL.lib;SaigeVision.lib</AdditionalDependencies>
     </Link>
     <Midl>
       <MkTypLibCompatible>false</MkTypLibCompatible>
@@ -176,14 +176,14 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_WINDOWS;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>C:\opencv_480\build\include;C:\Program Files\Matrox Imaging\MIL\Include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\opencv_470\build\include;C:\Program Files\Matrox Imaging\MIL\Include;C:\Program Files (x86)\EzSoftware UC\AXL(Library)\C, C++;D:\Saige\SaigeVision\engine\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalLibraryDirectories>C:\opencv_480\build\x64\vc16\lib;C:\Program Files\Matrox Imaging\MIL\LIB;$(OPENCV_DIR)\x64\vc16\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>opencv_world480.lib;opencv_world480d.lib;mil.lib;setupapi.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\opencv_470\build\x64\vc16\lib;C:\Program Files\Matrox Imaging\MIL\LIB;C:\Program Files (x86)\EzSoftware UC\AXL(Library)\Library\64Bit;D:\Saige\SaigeVision\engine\lib</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opencv_world470.lib;opencv_world470d.lib;mil.lib;AXL.lib;SaigeVision.lib</AdditionalDependencies>
     </Link>
     <Midl>
       <MkTypLibCompatible>false</MkTypLibCompatible>
@@ -227,9 +227,11 @@
     <None Include="res\KWBaseForm.rc2" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="C:\Users\Keeworks\Desktop\GimInspectionDemo (2)\GimInspectionDemo\KWBaseForm\Resource\BackGroundImage.bmp" />
+    <Image Include="Resource\BackGroundImage.bmp" />
+    <Image Include="resource\bitmap2.bmp" />
     <Image Include="Resource\InitButton.bmp" />
     <Image Include="Resource\StartButton.bmp" />
+    <Image Include="Resource\ZoomButton.bmp" />
     <Image Include="res\KWBaseForm.ico" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

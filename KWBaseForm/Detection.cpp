@@ -1,6 +1,12 @@
 #include "pch.h"
 #include "Detection.h";
 
+void printDetectionResult(const DetectionResult& result) {
+	std::cout << "Object Count: " << result.object_count << std::endl;
+	std::cout << "Object Score Threshold: " << result.objectScoreThreshold << std::endl;
+	std::cout << "Total Inference Time: " << result.total_inference_time << std::endl;
+}
+
 Mat loadImageFromUnsignedCharArray(const unsigned char* imageData, int width, int height, int channels) {
 	// 새로운 Mat 객체 생성
 	Mat image(height, width, CV_8UC(channels));
@@ -33,10 +39,9 @@ Mat loadImageFromUnsignedCharArray(const unsigned char* imageData, int width, in
 	return image;
 }
 
-
 void drawRectangleOnImage(Mat& image, int x, int y, int width, int height, int score = 0) {
 	// 사각형 그리기
-	rectangle(image, Point(x, y), Point(x + width, y + height), Scalar(0, 255, 0), 2);
+	rectangle(image, Point(x, y), Point(x + width, y + height), Scalar(0, 255, 0), 10);
 
 	if (score > 0) {
 		// 스코어를 텍스트로 변환
@@ -50,7 +55,7 @@ void drawRectangleOnImage(Mat& image, int x, int y, int width, int height, int s
 	}
 }
 
-void Detection::model_init(string model_path)
+void Detection::model_init(string model_path, int objectScoreThreshold = 80)
 {
 	trainedModelPath = model_path;
 	/***********************************************************
@@ -112,8 +117,8 @@ void Detection::model_init(string model_path)
 	 // objectAreaThresholdPerClass[numOfClasses]
 	 // maxNumOfDetectedObjects[numOfClasses]
 	options = new SaigeInferenceOption;
-	options->objectScoreThresholdPerClass[0] = 80;
-	options->objectScoreThresholdPerClass[1] = 80;
+	options->objectScoreThresholdPerClass[0] = 80; // `0`번 인덱스 값은 `OK` 클래스에 대응하는 값으로 의미가 없으며 설정도 불가능합니다.
+	options->objectScoreThresholdPerClass[1] = objectScoreThreshold;
 	options->objectScoreThresholdPerClass[2] = 80;
 
 	options->objectAreaThresholdPerClass[0] = 0;
@@ -163,7 +168,7 @@ void Detection::model_init(string model_path)
 	}
 }
 
-Mat Detection::run_detection(string imagePath)
+DetectionResult Detection::run_detection(string imagePath)
 {
 	/***********************************************************
 	 *    4. 이미지 검사하기, Inspect images
@@ -216,6 +221,8 @@ Mat Detection::run_detection(string imagePath)
 		SaigeDestroyInferenceResult(result);
 	}
 
+
+
 	// Detection은 nObject에 따라 struct SaigeDetectedObject의 메모리를 할당해야합니다.
 // 본 예제에서는 c++ vector를 이용해서 메모리 해제를 따로 하지않도록 합니다.
 	std::vector<SaigeDetectedObject> objects;
@@ -258,9 +265,8 @@ Mat Detection::run_detection(string imagePath)
 
 	// 이미지 mat으로 변환 -> 검사 결과 표시
 	Mat result_image;
+	result_image = loadImageFromUnsignedCharArray(ucImageData, w, h, c);
 	if (nObject > 0) {
-		result_image = loadImageFromUnsignedCharArray(ucImageData, w, h, c);
-
 		// draw rectangle
 		for (int i_box = 0; i_box < nObject; ++i_box) {
 			if (show_score) {
@@ -302,5 +308,13 @@ Mat Detection::run_detection(string imagePath)
 		}
 		ucImageData = nullptr;
 	}
-	return result_image;
+
+	DetectionResult result;
+	result.image = result_image;
+	result.object_count = nObject;
+	result.total_inference_time = total;
+	result.objectScoreThreshold = options->objectScoreThresholdPerClass[1]; //0인덱스는 OK클래스
+	//printDetectionResult(result);
+
+	return result;
 }

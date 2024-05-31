@@ -16,6 +16,13 @@
 using namespace std;
 using namespace cv;
 
+struct DetectionResult {
+	Mat image;
+	int object_count = 0;
+	int objectScoreThreshold = -1;
+	int total_inference_time = 0;
+};
+
 class Detection {
 public:
 	string trainedModelPath = "./det_0528_1132_best.saigedet"; //example
@@ -36,6 +43,6 @@ public:
 
 	bool show_score = true;
 
-	void model_init(string model_path);
-	Mat run_detection(string imagePath);
+	void model_init(string model_path, int objectScoreThreshold);
+	DetectionResult run_detection(string imagePath);
 };

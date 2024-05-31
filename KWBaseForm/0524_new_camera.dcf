@@ -3,12 +3,13 @@
 /
 /no name DCF template.
 /
+/
 [CAMERA_NAME]
 no name
 [CONFIG_FILE]
 50CF
 ODYSSEY
-Fri May 24 16:49:56 2024
+Thu May 30 15:53:29 2024
 [INFO_FILE_REV]
 0010.0019.0000
 RADIENT/eVCL/FULL
@@ -200,12 +201,12 @@ SYC_BLK                                                                         
 SYC_COMP                                                                                                   0x0
 SYC_SEP                                                                                                    0x0
 SYC_IN_CH                                                                                                  0x0
-EXP_SYN_CLK                                                                                                0x1
+EXP_SYN_CLK                                                                                                0x0
 EXP_ASY_CLK                                                                                                0x0
 EXP_CLK_FREQ                                                                                               0x510ff40
 EXP_CLK_DVED                                                                                               0x0
 EXP_CLK_DIVF                                                                                               0x0
-EXP_MD_PERD                                                                                                0x1
+EXP_MD_PERD                                                                                                0x0
 EXP_MD_W_TRG                                                                                               0x0
 EXP_MD_EXT                                                                                                 0x0
 EXP_MD_HSY                                                                                                 0x0
@@ -219,18 +220,18 @@ EXP_TRG_DEFAULT                                                                 
 EXP_TRG_POS                                                                                                0x0
 EXP_TRG_NEG                                                                                                0x0
 EXP_OUT_DLYD                                                                                               0x0
-EXP_OUT_T0                                                                                                 0x14c0
-EXP_OUT_T1                                                                                                 0x14c0
+EXP_OUT_T0                                                                                                 0x0
+EXP_OUT_T1                                                                                                 0x0
 EXP_OUT_T2                                                                                                 0x0
 EXP_OUT_T3                                                                                                 0x0
-EXP_OUT_TTL                                                                                                0x1
+EXP_OUT_TTL                                                                                                0x0
 EXP_OUT_422                                                                                                0x0
 EXP_OUT_OPTO                                                                                               0x0
 EXP_OUT_LVDS                                                                                               0x0
 EXP_OUT_DEFAULT                                                                                            0x0
-EXP_OUT_POS                                                                                                0x1
+EXP_OUT_POS                                                                                                0x0
 EXP_OUT_NEG                                                                                                0x0
-EXP_ARM_ENABLE                                                                                             0x0
+EXP_ARM_ENABLE                                                                                             0x1
 EXP_ARM_DISABLE                                                                                            0x0
 EXP_ARM_TTL                                                                                                0x1
 EXP_ARM_422                                                                                                0x0
@@ -286,13 +287,13 @@ DCF_IS_VIRTUAL                                                                  
 DAT_INFOFILE_REV_MAJOR                                                                                     0xa
 DAT_INFOFILE_REV_MINOR                                                                                     0x12
 DAT_INFOFILE_REV_BUILD                                                                                     0x0
-EXP_SYN_CLK_2                                                                                              0x0
+EXP_SYN_CLK_2                                                                                              0x1
 EXP_ASY_CLK_2                                                                                              0x0
-EXP_CLK_FREQ_2                                                                                             0x0
+EXP_CLK_FREQ_2                                                                                             0x510ff40
 EXP_CLK_DVED_2                                                                                             0x0
 EXP_CLK_DIVF_2                                                                                             0x0
 EXP_MD_PERD_2                                                                                              0x0
-EXP_MD_W_TRG_2                                                                                             0x0
+EXP_MD_W_TRG_2                                                                                             0x1
 EXP_MD_EXT_2                                                                                               0x0
 EXP_MD_HSY_2                                                                                               0x0
 EXP_MD_VSY_2                                                                                               0x0
@@ -302,21 +303,21 @@ EXP_TRG_422_2                                                                   
 EXP_TRG_OPTO_2                                                                                             0x0
 EXP_TRG_LVDS_2                                                                                             0x0
 EXP_TRG_DEFAULT_2                                                                                          0x0
-EXP_TRG_POS_2                                                                                              0x0
+EXP_TRG_POS_2                                                                                              0x1
 EXP_TRG_NEG_2                                                                                              0x0
-EXP_OUT_DLYD_2                                                                                             0x0
-EXP_OUT_T0_2                                                                                               0x0
-EXP_OUT_T1_2                                                                                               0x0
+EXP_OUT_DLYD_2                                                                                             0x1
+EXP_OUT_T0_2                                                                                               0x3e8
+EXP_OUT_T1_2                                                                                               0x3e8
 EXP_OUT_T2_2                                                                                               0x0
 EXP_OUT_T3_2                                                                                               0x0
-EXP_OUT_TTL_2                                                                                              0x0
+EXP_OUT_TTL_2                                                                                              0x1
 EXP_OUT_422_2                                                                                              0x0
 EXP_OUT_OPTO_2                                                                                             0x0
 EXP_OUT_LVDS_2                                                                                             0x0
 EXP_OUT_DEFAULT_2                                                                                          0x0
-EXP_OUT_POS_2                                                                                              0x0
+EXP_OUT_POS_2                                                                                              0x1
 EXP_OUT_NEG_2                                                                                              0x0
-EXP_ARM_ENABLE_2                                                                                           0x0
+EXP_ARM_ENABLE_2                                                                                           0x1
 EXP_ARM_DISABLE_2                                                                                          0x0
 EXP_ARM_TTL_2                                                                                              0x0
 EXP_ARM_422_2                                                                                              0x0
@@ -344,8 +345,8 @@ CLC_VSYNC_SEL                                                                   
 CLC_VSYNC_POL                                                                                              0x0
 CLC_HSYNC_SEL                                                                                              0x0
 CLC_HSYNC_POL                                                                                              0x0
-CLB_CC1                                                                                                    0x1
-CLB_CC2                                                                                                    0x2
+CLB_CC1                                                                                                    0x2
+CLB_CC2                                                                                                    0x1
 CLB_CC3                                                                                                    0x3
 CLB_CC4                                                                                                    0x5
 CLB_CCOUTEN1                                                                                               0x1
@@ -856,7 +857,7 @@ EXP_CLK_AUXIN1_LVDS                                                             
 EXP_CLK_AUXIN3_LVDS                                                                                        0x0
 EXP_CLK_AUXIN1_AC0_CL                                                                                      0x0
 EXP_CLK_AUXIN3_AC1_CL                                                                                      0x0
-EXP_CLK_AUXIN1_AC0_CL_SOL_BASE_EVCL_RADIENT                                                                0x0
+EXP_CLK_AUXIN1_AC0_CL_SOL_BASE_EVCL_RADIENT                                                                0x1
 EXP_CLK_AUXIN3_AC1_CL_SOL_BASE_EVCL_RADIENT                                                                0x0
 EXP_CLK_AUXIN1_AC2_CL_RADIENT                                                                              0x0
 EXP_CLK_AUXIN3_AC3_CL_RADIENT                                                                              0x0
@@ -1106,7 +1107,7 @@ EXP_0_COMBINE_T1_AC2_DIG_DCON                                                   
 EXP_0_NOCOMBINE_AC3_DIG_DCON                                                                               0x0
 EXP_0_COMBINE_XOR_T1_AC3_DIG_DCON                                                                          0x0
 EXP_0_COMBINE_T1_AC3_DIG_DCON                                                                              0x0
-EXP_PRESCALE1_1                                                                                            0x0
+EXP_PRESCALE1_1                                                                                            0x1
 EXP_PRESCALE1_2                                                                                            0x0
 EXP_PRESCALE1_4                                                                                            0x0
 EXP_PRESCALE1_8                                                                                            0x0
@@ -1158,7 +1159,7 @@ EXP_1_TRG_3_AC01_TTL_CL_SOL_EVCL                                                
 EXP_1_TRG_2_AC01_TTL_CL                                                                                    0x0
 EXP_1_TRG_3_AC01_TTL_CL                                                                                    0x0
 EXP_1_TRG_0_4AC_CON0_TTL_CL_RADIENT                                                                        0x0
-EXP_1_TRG_1_4AC_CON0_TTL_CL_RADIENT                                                                        0x0
+EXP_1_TRG_1_4AC_CON0_TTL_CL_RADIENT                                                                        0x1
 EXP_1_TRG_0_4AC_CON1_TTL_CL_RADIENT                                                                        0x0
 EXP_1_TRG_1_4AC_CON1_TTL_CL_RADIENT                                                                        0x0
 EXP_1_TRG_0_4AC_CON2_TTL_CL_RADIENT                                                                        0x0
@@ -1582,44 +1583,44 @@ DEF_VTOTAL_OVERFLOW                                                             
 DEF_VACTIVE_OVERFLOW                                                                                       0x0
 DEF_VAL_SOFSEL                                                                                             0x1
 DEF_ANA_TANDEM_MODE                                                                                        0x0
-DEF_TIMER0_ENABLED                                                                                         0x1
-DEF_TIMER1_ENABLED                                                                                         0x0
+DEF_TIMER0_ENABLED                                                                                         0x0
+DEF_TIMER1_ENABLED                                                                                         0x1
 DEF_TIMER0_TRIGGERS_PIPE_DELAY                                                                             0x0
-DEF_TIMER1_TRIGGERS_PIPE_DELAY                                                                             0x0
+DEF_TIMER1_TRIGGERS_PIPE_DELAY                                                                             0x4
 DEF_TIMER0_CLK_NOTAV                                                                                       0x0
 DEF_TIMER1_CLK_NOTAV                                                                                       0x0
 DEF_TIMER0_FREQ_NO_T1CLK                                                                                   0x510ff40
-DEF_TIMER1_FREQ_NO_T0CLK                                                                                   0x0
+DEF_TIMER1_FREQ_NO_T0CLK                                                                                   0x510ff40
 DEF_TIMER0_FREQ                                                                                            0x510ff40
-DEF_TIMER1_FREQ                                                                                            0x0
-DEF_TIMER0_AUX_CLK_IN                                                                                      0x0
+DEF_TIMER1_FREQ                                                                                            0x510ff40
+DEF_TIMER0_AUX_CLK_IN                                                                                      0x1
 DEF_TIMER1_AUX_CLK_2_IN                                                                                    0x0
-DEF_TIMER0_PIPE_DELAY1                                                                                     0x1
-DEF_TIMER1_PIPE_DELAY1                                                                                     0x0
-DEF_TMR0_CLKTMR1_CNT                                                                                       0x0
-DEF_TMR1_CLKTMR0_CNT                                                                                       0x2980
+DEF_TIMER0_PIPE_DELAY1                                                                                     0x0
+DEF_TIMER1_PIPE_DELAY1                                                                                     0x4
+DEF_TMR0_CLKTMR1_CNT                                                                                       0x7d0
+DEF_TMR1_CLKTMR0_CNT                                                                                       0x0
 DEF_TIMER01_CLK_HS_FREQ                                                                                    0x5105
 DEF_TIMER01_CLK_HS_PERIOD                                                                                  0xbc56
-DEF_TIMER0_CLK_HS_PERIOD_DLY1_CNT                                                                          0xf433597
+DEF_TIMER0_CLK_HS_PERIOD_DLY1_CNT                                                                          0x0
 DEF_TIMER0_CLK_HS_PERIOD_DLY2_CNT                                                                          0x0
-DEF_TIMER0_CLK_HS_PERIOD_T1_CNT                                                                            0xf43f1ec
+DEF_TIMER0_CLK_HS_PERIOD_T1_CNT                                                                            0x0
 DEF_TIMER0_CLK_HS_PERIOD_T2_CNT                                                                            0x0
-DEF_VALUE_EXP_0_DELAY1                                                                                     0xf420
+DEF_VALUE_EXP_0_DELAY1                                                                                     0x0
 DEF_VALUE_EXP_0_DELAY2                                                                                     0x0
-DEF_VALUE_EXP_0_TIME1                                                                                      0xf420
+DEF_VALUE_EXP_0_TIME1                                                                                      0x0
 DEF_VALUE_EXP_0_TIME2                                                                                      0x0
-DEF_TIMER1_CLK_HS_PERIOD_DLY1_CNT                                                                          0x0
+DEF_TIMER1_CLK_HS_PERIOD_DLY1_CNT                                                                          0x2dcbd5c
 DEF_TIMER1_CLK_HS_PERIOD_DLY2_CNT                                                                          0x0
-DEF_TIMER1_CLK_HS_PERIOD_T1_CNT                                                                            0x0
+DEF_TIMER1_CLK_HS_PERIOD_T1_CNT                                                                            0x2dfaeb3
 DEF_TIMER1_CLK_HS_PERIOD_T2_CNT                                                                            0x0
-DEF_VALUE_EXP_1_DELAY1                                                                                     0x0
+DEF_VALUE_EXP_1_DELAY1                                                                                     0x2dc8
 DEF_VALUE_EXP_1_DELAY2                                                                                     0x0
-DEF_VALUE_EXP_1_TIME1                                                                                      0x0
+DEF_VALUE_EXP_1_TIME1                                                                                      0x2df7
 DEF_VALUE_EXP_1_TIME2                                                                                      0x0
 DEF_PCLK_PERIOD_NS_NO_ROUND                                                                                0xb
 DEF_PCLK_PERIOD_NS_ROUND                                                                                   0xc
-DEF_TOTAL_TIME_VALUE_EXP_0_NO_CLK_TMR1                                                                     0x1e840
-DEF_TOTAL_TIME_VALUE_EXP_1_NO_CLK_TMR0                                                                     0x0
+DEF_TOTAL_TIME_VALUE_EXP_0_NO_CLK_TMR1                                                                     0x0
+DEF_TOTAL_TIME_VALUE_EXP_1_NO_CLK_TMR0                                                                     0x5bbf
 DEF_VALUE_EXP_0_CLK_TMR1_DELAY1                                                                            0x0
 DEF_VALUE_EXP_0_CLK_TMR1_DELAY2                                                                            0x0
 DEF_VALUE_EXP_0_CLK_TMR1_TIME1                                                                             0x0
@@ -1634,7 +1635,7 @@ DEF_VALUE_EXP_1_CLK_TMR0_DELAY1_ADJUST                                          
 DEF_VALUE_EXP_1_CLK_TMR0_TIME1_ADJUST                                                                      0x0
 DEF_EXP_0_TIME1_VALUE_LESS_HW                                                                              0x0
 DEF_TIMER0_MAX_CNT_TIM_DLY                                                                                 0x15c28f5c
-DEF_TIMER1_MAX_CNT_TIM_DLY                                                                                 0x0
+DEF_TIMER1_MAX_CNT_TIM_DLY                                                                                 0x15c28f5c
 DEF_INFO_TIME_OVRF_EXP0                                                                                    0x0
 DEF_INFO_TIME_OVRF_EXP1                                                                                    0x0
 DEF_TIMER0_CNT_OVERFLOW                                                                                    0x0
@@ -1643,7 +1644,7 @@ DEF_TIMER0_T1CLK_PERD_FREQ                                                      
 DEF_TIMER1_T0CLK_PERD_FREQ                                                                                 0x1
 DEF_TMR0_CLKFREQ_LESS_EQU_TRGFREQ                                                                          0x0
 DEF_TMR1_CLKFREQ_LESS_EQU_TRGFREQ                                                                          0x0
-DEF_RADIENT_TIMER0_OUT_AV                                                                                  0x1
+DEF_RADIENT_TIMER0_OUT_AV                                                                                  0x0
 DEF_RADIENT_TIMER1_OUT_AV                                                                                  0x1
 DEF_HW_CHANNEL_USED                                                                                        0x1
 DEF_ATTENUATOR                                                                                             0x1
@@ -1768,17 +1769,17 @@ INFO_BYTESORDER                                                                 
 INFO_BYTESORDERH                                                                                           0x0
 INFO_HARDGRABTRIG                                                                                          0x0
 INFO_TRIGSRC                                                                                               0x1
-INFO_T0DELAY                                                                                               0x14c0
+INFO_T0DELAY                                                                                               0x0
 INFO_T0DELAY1                                                                                              0x0
-INFO_T0TRIGSRC                                                                                             0x1
-INFO_T0CLKSRC                                                                                              0xd
-INFO_T0USRCLK                                                                                              0x510ff40
+INFO_T0TRIGSRC                                                                                             0x0
+INFO_T0CLKSRC                                                                                              0x0
+INFO_T0USRCLK                                                                                              0x0
 INFO_T0OTHERUSRCLK                                                                                         0x0
-INFO_T1DELAY                                                                                               0x0
+INFO_T1DELAY                                                                                               0x3e4
 INFO_T1DELAY1                                                                                              0x0
-INFO_T1TRIGSRC                                                                                             0x0
-INFO_T1CLKSRC                                                                                              0x0
-INFO_T1USRCLK                                                                                              0x0
+INFO_T1TRIGSRC                                                                                             0x10
+INFO_T1CLKSRC                                                                                              0xd
+INFO_T1USRCLK                                                                                              0x510ff40
 INFO_T1OTHERUSRCLK                                                                                         0x0
 INFO_T2DELAY                                                                                               0x0
 INFO_T2DELAY1                                                                                              0x0
@@ -1809,19 +1810,19 @@ INFO_M_GRAB_TRIGGER_FORMAT                                                      
 INFO_M_GRAB_TRIGGER_SOURCE                                                                                 0x0
 INFO_M_GRAB_EXPOSURE_0_MODE                                                                                0x0
 INFO_M_GRAB_EXPOSURE_0_TRIGGER_MODE                                                                        0x1
-INFO_M_GRAB_EXPOSURE_0_TRIGGER_FORMAT                                                                      0x1
-INFO_M_GRAB_EXPOSURE_0_TRIGGER_SOURCE                                                                      0xd
-INFO_M_GRAB_EXPOSURE_0_TIME_DELAY1                                                                         0xf420
+INFO_M_GRAB_EXPOSURE_0_TRIGGER_FORMAT                                                                      0x0
+INFO_M_GRAB_EXPOSURE_0_TRIGGER_SOURCE                                                                      0x0
+INFO_M_GRAB_EXPOSURE_0_TIME_DELAY1                                                                         0x0
 INFO_M_GRAB_EXPOSURE_0_TIME_DELAY2                                                                         0x0
-INFO_M_GRAB_EXPOSURE_0_TIME1                                                                               0xf420
+INFO_M_GRAB_EXPOSURE_0_TIME1                                                                               0x0
 INFO_M_GRAB_EXPOSURE_0_TIME2                                                                               0x0
 INFO_M_GRAB_EXPOSURE_1_MODE                                                                                0x0
 INFO_M_GRAB_EXPOSURE_1_TRIGGER_MODE                                                                        0x1
 INFO_M_GRAB_EXPOSURE_1_TRIGGER_FORMAT                                                                      0x1
-INFO_M_GRAB_EXPOSURE_1_TRIGGER_SOURCE                                                                      0x0
-INFO_M_GRAB_EXPOSURE_1_TIME_DELAY1                                                                         0x0
+INFO_M_GRAB_EXPOSURE_1_TRIGGER_SOURCE                                                                      0x6d
+INFO_M_GRAB_EXPOSURE_1_TIME_DELAY1                                                                         0x2dc8
 INFO_M_GRAB_EXPOSURE_1_TIME_DELAY2                                                                         0x0
-INFO_M_GRAB_EXPOSURE_1_TIME1                                                                               0x0
+INFO_M_GRAB_EXPOSURE_1_TIME1                                                                               0x2df7
 INFO_M_GRAB_EXPOSURE_1_TIME2                                                                               0x0
 INFO_M_GRAB_EXPOSURE_2_MODE                                                                                0x0
 INFO_M_GRAB_EXPOSURE_2_TRIGGER_MODE                                                                        0x1
@@ -1872,7 +1873,7 @@ INFO_MASK_USROUT2                                                               
 INFO_MASK_USROUT3                                                                                          0x0
 INFO_MASK_IOCTLCLDYNL                                                                                      0x0
 INFO_MASK_IOCTLCLDYNH                                                                                      0x0
-INFO_MASK_IOCTLCL0L                                                                                        0xf0ffff
+INFO_MASK_IOCTLCL0L                                                                                        0xf00ffff
 INFO_MASK_IOCTLCL0H                                                                                        0x0
 INFO_MASK_IOCTLCL1L                                                                                        0x0
 INFO_MASK_IOCTLCL1H                                                                                        0x0
@@ -1887,7 +1888,7 @@ INFO_MASK_IOCTLDI1                                                              
 INFO_MASK_IOCTLDI2                                                                                         0x0
 INFO_MASK_IOCTLDI3                                                                                         0x0
 INFO_MASK_ENCTLCLDYN                                                                                       0x0
-INFO_MASK_ENCTLCL0                                                                                         0xa0
+INFO_MASK_ENCTLCL0                                                                                         0xc4
 INFO_MASK_ENCTLCL1                                                                                         0x0
 INFO_MASK_ENCTLANDYN                                                                                       0x0
 INFO_MASK_ENCTLAN0                                                                                         0x0
@@ -1930,18 +1931,18 @@ DIG_VSCLM                                                                       
 DIG_VECLM                                                                                                  0x0
 DIG_VCTL                                                                                                   0x2100
 DIG_T0CNT                                                                                                  0x0
-DIG_T0SCNT                                                                                                 0x297f
-DIG_T0S0PUL                                                                                                0x14c0
+DIG_T0SCNT                                                                                                 0x0
+DIG_T0S0PUL                                                                                                0x0
 DIG_T0E0PUL                                                                                                0x0
 DIG_T0S1PUL                                                                                                0x0
-DIG_T0CTLL                                                                                                 0x20b0
+DIG_T0CTLL                                                                                                 0x0
 DIG_T0CTLH                                                                                                 0x1
 DIG_T1CNT                                                                                                  0x0
-DIG_T1SCNT                                                                                                 0x0
-DIG_T1S0PUL                                                                                                0x0
+DIG_T1SCNT                                                                                                 0x7cc
+DIG_T1S0PUL                                                                                                0x3e8
 DIG_T1E0PUL                                                                                                0x0
 DIG_T1S1PUL                                                                                                0x0
-DIG_T1CTLL                                                                                                 0x0
+DIG_T1CTLL                                                                                                 0x26070
 DIG_T1CTLH                                                                                                 0x1
 DIG_BAYERCTL                                                                                               0x0
 DIG_QUADCTL                                                                                                0x90001
@@ -1964,7 +1965,7 @@ DIG_USROUT3                                                                     
 DIG_CLCTL                                                                                                  0xc
 DIG_IOCTL0L                                                                                                0x0
 DIG_IOCTL0H                                                                                                0x0
-DIG_IOCTLCL0L                                                                                              0x103210
+DIG_IOCTLCL0L                                                                                              0x1003201
 DIG_IOCTLCL0H                                                                                              0x0
 DIG_IOCTLCL1L                                                                                              0x0
 DIG_IOCTLCL1H                                                                                              0x0
@@ -1979,7 +1980,7 @@ DIG_IOCTLDI1                                                                    
 DIG_IOCTLDI2                                                                                               0x0
 DIG_IOCTLDI3                                                                                               0x0
 DIG_ENCTL0                                                                                                 0x0
-DIG_ENCTLCL0                                                                                               0xa0
+DIG_ENCTLCL0                                                                                               0xc4
 DIG_ENCTLCL1                                                                                               0x0
 DIG_ENCTL1                                                                                                 0x0
 DIG_ENCTLAN0                                                                                               0x0
@@ -2334,5 +2335,5 @@ DIG_IOCTL1H                                                                     
 DIG_IOCTL0_L                                                                                             not_modified
 DIG_ENCTL                                                                                                not_modified
 [EOF]
-00007FF6919FAAA8                                                0x400d0
-00007FF6919FAA90                                                 0x7606ea6d
+00007FF6AB86AAA8                                                0x400ea
+00007FF6AB86AA90                                                 0x23392303

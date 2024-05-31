@@ -77,13 +77,19 @@
     <Image Include="res\KWBaseForm.ico">
       <Filter>리소스 파일</Filter>
     </Image>
-    <Image Include="C:\Users\Keeworks\Desktop\GimInspectionDemo (2)\GimInspectionDemo\KWBaseForm\Resource\BackGroundImage.bmp">
-      <Filter>리소스 파일</Filter>
-    </Image>
     <Image Include="Resource\InitButton.bmp">
       <Filter>리소스 파일</Filter>
     </Image>
     <Image Include="Resource\StartButton.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\BackGroundImage.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="resource\bitmap2.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Resource\ZoomButton.bmp">
       <Filter>리소스 파일</Filter>
     </Image>
   </ItemGroup>

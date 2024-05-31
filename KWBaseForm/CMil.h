@@ -22,8 +22,6 @@ public:
 	CMil();
 	~CMil();
 
-	
-
 	typedef struct
 	{
 		// Object
@@ -57,15 +55,12 @@ public:
 		MIL_ID ModifiedBufferId;
 		MIL_INT ProcessedImageCount;
 
+		Mat GrabImage;
 
 		Mat MatOddImage;
 		Mat MatEvenImage;
-
-
 		MIL_ID OddImage;
 		MIL_ID EvenImage;
-
-
 		bool imgSaved;
 
 	}HookDataStruct;
@@ -77,39 +72,31 @@ public:
 	
 	// Custom Functions
 	bool Allocation(int option); // 0 : Default | 1 : CXP | 2 : RADIENT | 3 : GIGE | 4  : USB3 | 5 : SOLIOS
-
 	void Alloc_Buffer(); // Allocation Buffer
-	void Display_Select(int DeviceNum, MIL_WINDOW_HANDLE DisplayHandle);
-	void GrabThread(int DeviceNum);
-	void GrabThreadEnd(int DeviceNum);
-
 	void GrabProcess_Line2();
+	void Alloc_MIL_ImageBuffer();
 
+	static const int Total_Frame_Num_cpp = 7;
 
 	MIL_ID MilApp;
 	MIL_ID MilSystem;
 	MIL_ID MilImageDigit;
 	MIL_ID MilImageDisp;
-
-	MIL_ID MilSystem_backup;
-	
-
-	void Alloc_MIL_ImageBuffer();
+	MIL_ID MilZoomDisp;
 
 	MIL_ID OddImage;
 	MIL_ID EvenImage;
 
 	int SizeGimX;
 	int SizeGimY;
+	 
 	MIL_ID OddImageAI;
 	MIL_ID EvenImageAI;
 	MIL_ID OddImageRule;
 	MIL_ID EvenImageRule;
-	
+	MIL_ID ZoomImage;
 
-	static const int Total_Frame_Num_cpp = 9;
 	MIL_INT SizeBand1;
-	
 
 	MIL_ID OddImageDisplay;
 	MIL_ID EvenImageDisplay;
@@ -119,10 +106,6 @@ public:
 	MIL_ID EvenDisplayRule;
 
 	// HookFunction
-	static MIL_INT MFTYPE ProcessingFunction(MIL_INT HookType, MIL_ID HookId, void* HookDataPtr);
-
 	static MIL_INT MFTYPE ProcessingFunction2(MIL_INT HookType, MIL_ID HookId, void* HookDataPtr);
-
-	void CopyMatToMil(const Mat& image, MIL_ID milImage);
 };
 
