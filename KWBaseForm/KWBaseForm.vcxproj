@@ -203,6 +203,7 @@
     <ClInclude Include="KWBaseForm.h" />
     <ClInclude Include="KWBaseFormDlg.h" />
     <ClInclude Include="Motor.h" />
+    <ClInclude Include="OverLapDetection.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="targetver.h" />
@@ -213,6 +214,7 @@
     <ClCompile Include="KWBaseForm.cpp" />
     <ClCompile Include="KWBaseFormDlg.cpp" />
     <ClCompile Include="Motor.cpp" />
+    <ClCompile Include="OverLapDetection.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
@@ -228,10 +230,22 @@
   </ItemGroup>
   <ItemGroup>
     <Image Include="Resource\BackGroundImage.bmp" />
-    <Image Include="resource\bitmap2.bmp" />
+    <Image Include="Resource\BackGroundImage2.bmp" />
+    <Image Include="Resource\BackGroundImage3.bmp" />
+    <Image Include="Resource\BackGroundImage4.bmp" />
+    <Image Include="resource\bitmap3.bmp" />
+    <Image Include="Resource\CJ&amp;KEEWORKS_BG.bmp" />
+    <Image Include="Resource\CJ&amp;KEEWORKS_BG2.bmp" />
     <Image Include="Resource\InitButton.bmp" />
+    <Image Include="Resource\InitButton2.bmp" />
+    <Image Include="Resource\keeworks_logo2.bmp" />
+    <Image Include="Resource\keeworks_logo_ico.ico" />
+    <Image Include="Resource\NewStart.bmp" />
     <Image Include="Resource\StartButton.bmp" />
+    <Image Include="Resource\StartButton2.bmp" />
+    <Image Include="Resource\TestButton.bmp" />
     <Image Include="Resource\ZoomButton.bmp" />
+    <Image Include="res\icon1.ico" />
     <Image Include="res\KWBaseForm.ico" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

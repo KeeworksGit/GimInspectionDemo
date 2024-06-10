@@ -171,6 +171,29 @@ void Detection::model_init(string model_path, int objectScoreThreshold = 80)
 DetectionResult Detection::run_detection(string imagePath)
 {
 	/***********************************************************
+	* hsv 변환, 저장
+	 ***********************************************************/
+	Mat image = imread(imagePath);
+	if (image.empty()) {
+		cout << "이미지를 불러올 수 없습니다." << endl;
+	}
+
+	vector<cv::Mat> channels;
+	Mat hsvImage;
+	cvtColor(image, hsvImage, COLOR_BGR2HSV);
+
+	//split(hsvImage, channels);
+	//for (int i = 0; i < channels.size(); ++i) {
+	//	cv::normalize(channels[i], channels[i], 0, 255, NORM_MINMAX);
+	//}
+	//merge(channels, hsvImage);
+
+	size_t lastDotIndex = imagePath.find_last_of(".");
+	string imagePath_hsv = imagePath.substr(0, lastDotIndex) + "_hsv" + imagePath.substr(lastDotIndex, imagePath.size() - lastDotIndex);
+	imwrite(imagePath_hsv, hsvImage);
+	imagePath = imagePath_hsv;
+
+	/***********************************************************
 	 *    4. 이미지 검사하기, Inspect images
 	 *       이미지 사이즈는 같다고 가정한다.
 	 ***********************************************************/
@@ -263,9 +286,9 @@ DetectionResult Detection::run_detection(string imagePath)
 		std::cout << "---\n(End) Inspection Time: " << inferenceTime << " ms" << std::endl;
 	}
 
-	// 이미지 mat으로 변환 -> 검사 결과 표시
-	Mat result_image;
-	result_image = loadImageFromUnsignedCharArray(ucImageData, w, h, c);
+	// 검사 결과 표시는 원본 이미지에
+	Mat result_image = image;
+	//result_image = loadImageFromUnsignedCharArray(ucImageData, w, h, c);
 	if (nObject > 0) {
 		// draw rectangle
 		for (int i_box = 0; i_box < nObject; ++i_box) {
@@ -317,4 +340,9 @@ DetectionResult Detection::run_detection(string imagePath)
 	//printDetectionResult(result);
 
 	return result;
+}
+
+void Detection::detectionScoreChange(int objectScoreThreshold)
+{
+	options->objectScoreThresholdPerClass[1] = objectScoreThreshold;
 }

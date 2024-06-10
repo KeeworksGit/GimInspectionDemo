@@ -45,4 +45,6 @@ public:
 
 	void model_init(string model_path, int objectScoreThreshold);
 	DetectionResult run_detection(string imagePath);
+	
+	void detectionScoreChange(int objectScoreThreshold);
 };

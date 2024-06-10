@@ -11,6 +11,22 @@
 #define IDB_StartBtn                    132
 #define IDB_BITMAP1                     133
 #define IDB_BITMAP2                     135
+#define IDB_BITMAP3                     136
+#define IDB_BG                          137
+#define IDB_InitBtn2                    138
+#define IDB_BITMAP4                     139
+#define IDB_StartBtn2                   139
+#define IDB_TestBtn                     140
+#define IDB_BG2                         141
+#define IDB_KW_Logo                     142
+#define IDB_BG3                         145
+#define IDB_StartBtn3                   146
+#define IDB_BITMAP5                     147
+#define IDI_ICON1                       148
+#define IDI_KW_LOGO                     148
+#define IDB_BG4                         149
+#define IDB_BITMAP6                     150
+#define IDB_BG5                         150
 #define IDC_DISP_0                      1000
 #define IDC_BTN_INIT                    1001
 #define IDC_DISP_5                      1002
@@ -18,9 +34,9 @@
 #define IDC_DISP_2                      1004
 #define IDC_BTN_SAVE                    1005
 #define IDC_DISP_3                      1006
-#define IDC_BTN_SAVE2                   1007
 #define IDC_BTN_INSPEC                  1007
 #define IDC_TEXT_RESULT                 1008
+#define IDC_BTN_TEST                    1008
 #define IDC_DISP10                      1009
 #define IDC_EDIT1                       1010
 #define IDC_EDIT2                       1011
@@ -40,9 +56,9 @@
 // 
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
-#define _APS_NEXT_RESOURCE_VALUE        136
+#define _APS_NEXT_RESOURCE_VALUE        151
 #define _APS_NEXT_COMMAND_VALUE         32771
-#define _APS_NEXT_CONTROL_VALUE         1020
+#define _APS_NEXT_CONTROL_VALUE         1024
 #define _APS_NEXT_SYMED_VALUE           101
 #endif
 #endif

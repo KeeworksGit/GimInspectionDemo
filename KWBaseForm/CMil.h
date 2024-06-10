@@ -32,6 +32,7 @@ public:
 		MIL_ID MilDispBuf_M;
 		MIL_ID MilDispBuf_C;
 		MIL_ID MilGrabBuf[GRAB_NUM];
+		int UsedGrabBufSize = 0;
 		
 		// Image Format Feature
 		MIL_INT SizeX;
@@ -75,8 +76,9 @@ public:
 	void Alloc_Buffer(); // Allocation Buffer
 	void GrabProcess_Line2();
 	void Alloc_MIL_ImageBuffer();
+	void Re_Alloc_Buffer();
 
-	static const int Total_Frame_Num_cpp = 7;
+	static const int Total_Frame_Num_cpp = 8;
 
 	MIL_ID MilApp;
 	MIL_ID MilSystem;

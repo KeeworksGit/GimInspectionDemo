@@ -7,7 +7,9 @@
 #include "CMil.h"
 #include "Motor.h"
 #include "Detection.h"
+#include "OverLapDetection.h"
 #include <chrono>
+
 
 // CKWBaseFormDlg 대화 상자
 class CKWBaseFormDlg : public CDialogEx
@@ -42,10 +44,10 @@ protected:
 public:
 	Mat odd_pixel_canvas;
 	Mat even_pixel_canvas;
-	int height; // Split Image Height
-	int width;	// Split Image Width
-	std::string save_image_path_even = ".\\Image\\Origin_Odd_Y.bmp";
-	std::string save_image_path_odd = ".\\Image\\Origin_Even_Y.bmp";
+	int height; // Grab Image Height
+	int width;	// Grab Image Width
+	string save_image_path_even = ".\\Image\\Origin_Even_Y.bmp";
+	string save_image_path_odd = ".\\Image\\Origin_Odd_Y.bmp";
 
 public:
 	afx_msg void OnBnClickedBtnInit();
@@ -56,6 +58,10 @@ public:
 	CStatic m_CtrlDisp5;
 	CBitmapButton m_ButtonSave;
 	CBitmapButton m_ButtonInit;
+	CBitmapButton m_ButtonTest;
+
+
+
 	Motor motor;
 	Detection even_detection; //상부조명만
 	int count = 1;
@@ -89,5 +95,39 @@ public:
 	afx_msg void OnBnClickedBtnZoomRule();
 	afx_msg void OnTimer(UINT_PTR nIDEvent);
 	void ProcessWindowMessage();
+	
+	
+	
+	void ProcessInit(); // 최초 실행시 초기화
+
+
+	void ImageSplit();
+	void DetectionHoleRule();
+	void DetectionNumRule();
+	void DetectionNumDeepLearn();
+	
+	void PrintHoleRule();
+	void PrintNumRule();
+	void PrintNumDeepLearn();
+	Mat High_Frame;
+	Mat Low_Frame;
+	DetectionResult DL_Frame;
+
+	std::chrono::milliseconds DetectionHoleRuleTime;
+	std::chrono::milliseconds DetectionNumRuleTime;
+	int DetectionHoleRule_HoleCount;
+	bool DetectionHoleRule_overlap_result;
+	float DetectionHoleRule_fHoleMinSize;
+
+
+	bool bDetectionHoleRuleFinish;
+	bool bDetectionNumRuleFinish;
+	bool bDetectionNumDeepLearnFinish;
+
+	int DetectionNumRule_Low_Def_Count;
+
+
 	afx_msg void OnBnClickedBtnInspec();
+	
+	afx_msg void OnBnClickedBtnTest();
 };
